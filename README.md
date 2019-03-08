@@ -94,25 +94,25 @@ APIMATICCalculatorClient client = new APIMATICCalculatorClient();
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [CalculatorEndpoints](#calculator_endpoints)
+* [CalculatorDevOpsConf](#calculator_dev_ops_conf)
 
-## <a name="calculator_endpoints"></a>![Class: ](https://apidocs.io/img/class.png "io.apimatic.examples.controllers.CalculatorEndpoints") CalculatorEndpoints
+## <a name="calculator_dev_ops_conf"></a>![Class: ](https://apidocs.io/img/class.png "io.apimatic.examples.controllers.CalculatorDevOpsConf") CalculatorDevOpsConf
 
 ### Get singleton instance
 
-The singleton instance of the ``` CalculatorEndpoints ``` class can be accessed from the API Client.
+The singleton instance of the ``` CalculatorDevOpsConf ``` class can be accessed from the API Client.
 
 ```java
-CalculatorEndpoints calculatorEndpoints = client.getCalculatorEndpoints();
+CalculatorDevOpsConf calculatorDevOpsConf = client.getCalculatorDevOpsConf();
 ```
 
-### <a name="calculate_op_async"></a>![Method: ](https://apidocs.io/img/method.png "io.apimatic.examples.controllers.CalculatorEndpoints.calculateOpAsync") calculateOpAsync
+### <a name="calculate_dev_ops_stamford_async"></a>![Method: ](https://apidocs.io/img/method.png "io.apimatic.examples.controllers.CalculatorDevOpsConf.calculateDevOpsStamfordAsync") calculateDevOpsStamfordAsync
 
 > Calculates the expression using the specified operation..
 
 
 ```java
-void calculateOpAsync(
+void calculateDevOpsStamfordAsync(
         final OperationType operation,
         final double x,
         final double y,
@@ -135,7 +135,7 @@ OperationType operation = OperationType.fromString("MULTIPLY");
 double x = 4;
 double y = 5;
 // Invoking the API call with sample inputs
-calculatorEndpoints.calculateOpAsync(operation, x, y, new APICallBack<Double>() {
+calculatorDevOpsConf.calculateDevOpsStamfordAsync(operation, x, y, new APICallBack<Double>() {
     public void onSuccess(HttpContext context, Double response) {
         // TODO success callback handler
     }
