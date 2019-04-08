@@ -94,28 +94,26 @@ APIMATICCalculatorClient client = new APIMATICCalculatorClient();
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [CalculatorDevOpsConf](#calculator_dev_ops_conf)
+* [SimpleCalculatorController](#simple_calculator_controller)
 
-## <a name="calculator_dev_ops_conf"></a>![Class: ](https://apidocs.io/img/class.png "m39.m81.m213.m129.controllers.CalculatorDevOpsConf") CalculatorDevOpsConf
+## <a name="simple_calculator_controller"></a>![Class: ](https://apidocs.io/img/class.png "m39.m81.m213.m129.controllers.SimpleCalculatorController") SimpleCalculatorController
 
 ### Get singleton instance
 
-The singleton instance of the ``` CalculatorDevOpsConf ``` class can be accessed from the API Client.
+The singleton instance of the ``` SimpleCalculatorController ``` class can be accessed from the API Client.
 
 ```java
-CalculatorDevOpsConf calculatorDevOpsConf = client.getCalculatorDevOpsConf();
+SimpleCalculatorController simpleCalculator = client.getSimpleCalculator();
 ```
 
-### <a name="calculate_dev_ops_stamford_async"></a>![Method: ](https://apidocs.io/img/method.png "m39.m81.m213.m129.controllers.CalculatorDevOpsConf.calculateDevOpsStamfordAsync") calculateDevOpsStamfordAsync
+### <a name="get_calculate_async"></a>![Method: ](https://apidocs.io/img/method.png "m39.m81.m213.m129.controllers.SimpleCalculatorController.getCalculateAsync") getCalculateAsync
 
-> Calculates the expression using the specified operation..
+> Calculates the expression using the specified operation.
 
 
 ```java
-void calculateDevOpsStamfordAsync(
-        final OperationType operation,
-        final double x,
-        final double y,
+void getCalculateAsync(
+        final GetCalculateInput input,
         final APICallBack<Double> callBack)
 ```
 
@@ -131,18 +129,27 @@ void calculateDevOpsStamfordAsync(
 #### Example Usage
 
 ```java
-OperationType operation = OperationType.fromString("MULTIPLY");
+GetCalculateInput collect = new GetCalculateInput();
+
+OperationTypeEnum operation = OperationTypeEnum.fromString("MULTIPLY");
+collect.setOperation(operation);
+
 double x = 4;
+collect.setX(x);
+
 double y = 5;
+collect.setY(y);
+
 // Invoking the API call with sample inputs
-calculatorDevOpsConf.calculateDevOpsStamfordAsync(operation, x, y, new APICallBack<Double>() {
+simpleCalculator.getCalculateAsync(collect, new APICallBack<Double>() {
     public void onSuccess(HttpContext context, Double response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
