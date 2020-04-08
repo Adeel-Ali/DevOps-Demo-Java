@@ -5,6 +5,7 @@
  */
 package io.apimatic.examples.controllers;
 
+
 import io.apimatic.examples.exceptions.*;
 import io.apimatic.examples.http.client.HttpClient;
 import io.apimatic.examples.http.client.HttpContext;
@@ -69,17 +70,17 @@ public abstract class BaseController {
             }
         }
     }
-
     /**
      * Validates the response against HTTP errors defined at the API level
-     * @param   response    The response recieved
+     * @param   _response    The response recieved
      * @param   context     Context of the request and the recieved response 
      */
-    protected void validateResponse(HttpResponse response, HttpContext context) 
+    protected void validateResponse(HttpResponse _response, HttpContext context) 
             throws APIException {
         //get response status code to validate
-        int responseCode = response.getStatusCode();
-        if ((responseCode < 200) || (responseCode > 208)) //[200,208] = HTTP OK
+        int responseCode = _response.getStatusCode();
+        if ((responseCode < 200) || (responseCode > 208)) { //[200,208] = HTTP OK
             throw new APIException("HTTP Response Not OK", context);
+        }
     }
 }

@@ -48,15 +48,15 @@ public class CalculatorDevOpsConfTest extends ControllerTestBase {
     }
 
     /**
-     * Todo Add description for test testSum
+     * Todo Add description for test testDivide
      * @throws Throwable
      */
     @Test
-    public void testSum() throws Throwable {
+    public void testDivide() throws Throwable {
         // Parameters for the API call
-        OperationType operation = OperationType.fromString("SUM");
-        double x = 5d;
-        double y = 20d;
+        OperationType operation = OperationType.fromString("DIVIDE");
+        double x = 20d;
+        double y = 4d;
 
         // Set callback and perform API call
         double result = 0;
@@ -77,7 +77,7 @@ public class CalculatorDevOpsConfTest extends ControllerTestBase {
                 result);
  
         assertEquals("Response does not match expected value", 
-            25, result, ASSERT_PRECISION);
+            5, result, ASSERT_PRECISION);
     }
 
     /**
@@ -114,15 +114,15 @@ public class CalculatorDevOpsConfTest extends ControllerTestBase {
     }
 
     /**
-     * Todo Add description for test testDivide
+     * Todo Add description for test testSum
      * @throws Throwable
      */
     @Test
-    public void testDivide() throws Throwable {
+    public void testSum() throws Throwable {
         // Parameters for the API call
-        OperationType operation = OperationType.fromString("DIVIDE");
-        double x = 20d;
-        double y = 4d;
+        OperationType operation = OperationType.fromString("SUM");
+        double x = 5d;
+        double y = 20d;
 
         // Set callback and perform API call
         double result = 0;
@@ -143,7 +143,7 @@ public class CalculatorDevOpsConfTest extends ControllerTestBase {
                 result);
  
         assertEquals("Response does not match expected value", 
-            5, result, ASSERT_PRECISION);
+            25, result, ASSERT_PRECISION);
     }
 
 }
